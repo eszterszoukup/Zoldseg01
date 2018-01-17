@@ -19,25 +19,26 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        public string loginnev = "eszter";
-        public string jelszo = "eszter";
+        public string loginnev = "a";
+        public string jelszo = "a";
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+      
+     public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
         }
 
         private void Form2_load(object sender, EventArgs e)
         {
+            //Form1.button1_Click();
 
-            SqlConnection conn = new SqlConnection("Data Source=ESZTER-LATOP\\SQLEXPRESS12;Initial Catalog=ZOLDSEG;Integrated Security=True");
+             SqlConnection conn = new SqlConnection("Data Source=ESZTER-LATOP\\SQLEXPRESS12;Initial Catalog=ZOLDSEG;Integrated Security=True");
 
-            DataTable data = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter("exec login_ellenorzes " + loginnev + ", " + jelszo, conn);
+             DataTable data = new DataTable();
+             SqlDataAdapter adapter = new SqlDataAdapter("exec login_ellenorzes " + loginnev + ", " + jelszo, conn);
 
-            adapter.Fill(data);
-
-            dataGridView1.DataSource = data;
+             adapter.Fill(data);
+             dataGridView1.DataSource = data;
         }
     }
 }

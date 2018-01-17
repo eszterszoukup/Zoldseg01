@@ -51,10 +51,21 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            SqlConnection conn = new SqlConnection("Data Source=ESZTER-LATOP\\SQLEXPRESS12;Initial Catalog=ZOLDSEG;Integrated Security=True");
+
+            DataTable data = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter("exec login_ellenorzes " + loginnev + ", " + jelszo, conn);
+
+            adapter.Fill(data);
+            
+
+
             this.Hide();
             Form f2 = new Form2();
-            f2.ShowDialog();
+
+
+           //dataGridView1.DataSource = data; ki kellene iratni a Form2-n, de a két form nem "látja" egymást
+            f2.Show();
         }
     }
 }
