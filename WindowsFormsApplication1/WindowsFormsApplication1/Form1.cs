@@ -20,10 +20,11 @@ namespace WindowsFormsApplication1
 
 
 
+
         //public string conString = "Data Source=ESZTER-LATOP\\SQLEXPRESS12;Initial Catalog=ZOLDSEG;Integrated Security=True";
 
-        public string loginnev = "eszter";
-        public string jelszo = "eszter";
+        public string loginnev = "";
+        public string jelszo = "";
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -33,18 +34,18 @@ namespace WindowsFormsApplication1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox1.Text = loginnev;
+            loginnev =  textBox1.Text;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            textBox2.Text = jelszo;
+            jelszo = textBox2.Text ;
         }
 
         protected void form1_load(object sender, EventArgs e)
         {
 
-
+            // dataGridView1.DataSource = data; ki kellene iratni a Form2-n, de a két form nem "látja" egymást
 
 
         }
@@ -58,13 +59,13 @@ namespace WindowsFormsApplication1
 
             adapter.Fill(data);
             
-
-
+            
+              
             this.Hide();
             Form f2 = new Form2();
 
+           
 
-           //dataGridView1.DataSource = data; ki kellene iratni a Form2-n, de a két form nem "látja" egymást
             f2.Show();
         }
     }

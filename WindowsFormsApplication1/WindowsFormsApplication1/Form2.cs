@@ -16,17 +16,17 @@ namespace WindowsFormsApplication1
     {
         public Form2()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
-
-        public string loginnev = "a";
-        public string jelszo = "a";
+          
+        public string loginnev = "a";   
+        public string jelszo = "a";  
 
       
      public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-        }
+        } 
 
         private void Form2_load(object sender, EventArgs e)
         {
